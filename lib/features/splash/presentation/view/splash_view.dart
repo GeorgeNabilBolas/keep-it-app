@@ -5,9 +5,17 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('KEEP IT'),
+        child: Text('KEEP IT.', style: Theme.of(context).textTheme.titleLarge),
+      ),
+      bottomSheet: Padding(
+        padding: const EdgeInsets.only(bottom: 10.0),
+        child: Text(
+          'BY\nGEORGE NABIL',
+          style: Theme.of(context).textTheme.titleSmall,
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
