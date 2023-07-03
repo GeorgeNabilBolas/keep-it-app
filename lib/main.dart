@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:keep_it/features/home%20page/presentation/view/home_page.dart';
 
 import 'constants.dart';
 import 'features/splash/presentation/view/splash_view.dart';
@@ -13,19 +14,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        HomePage.id: (context) => const HomePage(),
+      },
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.light(useMaterial3: true).copyWith(
         scaffoldBackgroundColor: kPrimaryColor,
         textTheme: TextTheme(
           titleLarge: TextStyle(
-              color: Color(0xFF0B1320),
-              fontFamily: 'IntroRust',
-              fontSize: MediaQuery.textScaleFactorOf(context) * 50),
-          titleSmall: TextStyle(
-              color: Color(0xFF0B1320),
-              fontFamily: 'IntroRust',
-              fontSize: MediaQuery.textScaleFactorOf(context) * 15),
+              color: kTextColor,
+              fontFamily: kFontFamily,
+              fontSize: MediaQuery.of(context).size.width * .15),
+          labelSmall: TextStyle(
+              color: kTextColor,
+              fontFamily: kFontFamily,
+              fontSize: MediaQuery.of(context).size.width * .03),
         ),
       ),
       home: const SplashView(),
