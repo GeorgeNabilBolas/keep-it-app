@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           titleLarge: TextStyle(
               color: kTextColor,
               fontFamily: kFontFamily,
-              fontSize: MediaQuery.of(context).size.width * .15),
+              fontSize: MediaQuery.of(context).size.width * .12),
           labelSmall: TextStyle(
               color: kTextColor,
               fontFamily: kFontFamily,
