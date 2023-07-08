@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:keep_it/core/utils/styles.dart';
 
-class SplashSecondaryWidget extends StatelessWidget {
-  const SplashSecondaryWidget({
+class SplashBodySubtitle extends StatelessWidget {
+  const SplashBodySubtitle({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return const Text(
       'BY\nGEORGE NABIL',
-      style: Theme.of(context).textTheme.labelSmall,
+      style: Styles.labelSmall,
       textAlign: TextAlign.center,
     );
   }

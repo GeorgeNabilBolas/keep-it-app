@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:keep_it/constants.dart';
+import 'package:keep_it/core/utils/styles.dart';
+import 'package:keep_it/features/introduction/view/introduction_page.dart';
 
-import '../../../../../constants.dart';
-import '../../../../home page/presentation/view/home_page.dart';
 import 'typewriter_animated_text.dart';
 
-class SplashPrimaryWidget extends StatelessWidget {
-  const SplashPrimaryWidget({
+class SplashBodyTitle extends StatelessWidget {
+  const SplashBodyTitle({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return TypewriterAnimatedText(
-      duration: const Duration(milliseconds: 2500),
-      indicatorPulsesNum: 3,
+      duration: const Duration(seconds: 3),
+      indicatorPulsesNum: 5,
       text: 'KEEP IT.',
       indicatorShape: '_',
-      style: Theme.of(context).textTheme.titleLarge,
+      style: Styles.titleLarge,
       onEnd: () => navigationFunction(context),
     );
   }
@@ -34,7 +35,7 @@ class SplashPrimaryWidget extends StatelessWidget {
   PageRouteBuilder<dynamic> buildRoute() {
     return PageRouteBuilder(
       transitionDuration: kTransitionDuration,
-      pageBuilder: (_, __, ___) => const HomePage(),
+      pageBuilder: (_, __, ___) => const IntroductionPage(),
       transitionsBuilder: (context, animation, _, child) {
         return FadeTransition(
           opacity: animation,

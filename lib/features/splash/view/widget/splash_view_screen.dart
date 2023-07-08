@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'splash_primary_widget.dart';
-import 'splash_secondary_widget.dart';
+import 'splash_body_subtitle.dart';
+import 'splash_body_title.dart';
 
-class SplashViewBody extends StatelessWidget {
-  const SplashViewBody({
+class SplashViewScreen extends StatelessWidget {
+  const SplashViewScreen({
     super.key,
   });
 
@@ -16,11 +16,11 @@ class SplashViewBody extends StatelessWidget {
       children: [
         Flexible(
           fit: FlexFit.tight,
-          child: SplashPrimaryWidget(),
+          child: SplashBodyTitle(),
         ),
         Flexible(
           flex: 1,
-          child: SplashSecondaryWidget(),
+          child: SplashBodySubtitle(),
         )
       ],
     );

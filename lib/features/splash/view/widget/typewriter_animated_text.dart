@@ -37,8 +37,7 @@ class TypewriterAnimatedText extends StatelessWidget {
 //////////////////set showText methode/////////////////////////////////
 
   String showText(int steps) {
-    bool showSuffixIndicator = false;
-    showSuffixIndicator = suffixIndicatorCheck(steps);
+    bool showSuffixIndicator = suffixIndicatorCheck(steps);
     bool showPrefixIndicator = steps.isOdd;
 
     String suffixIndicator = showSuffixIndicator ? indicatorShape : '';
@@ -49,8 +48,7 @@ class TypewriterAnimatedText extends StatelessWidget {
   }
 
   bool suffixIndicatorCheck(int steps) {
-    if (steps - indicatorPulsesNum <= text.length &&
-        steps - indicatorPulsesNum != text.indexOf(' ')) {
+    if (steps - indicatorPulsesNum <= text.length) {
       return true;
     } else if (steps - indicatorPulsesNum >= text.length && steps.isOdd) {
       return true;
@@ -59,13 +57,11 @@ class TypewriterAnimatedText extends StatelessWidget {
   }
 
   String textValue(int steps) {
-    int endValue = 0;
     if (steps - indicatorPulsesNum <= text.length) {
-      endValue = steps - indicatorPulsesNum;
+      return text.substring(0, steps - indicatorPulsesNum);
     } else {
-      endValue = text.length;
+      return text.substring(0, text.length);
     }
-    return text.substring(0, endValue);
   }
 
 //////////////////set textPadding methode/////////////////////////////////
