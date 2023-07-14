@@ -19,7 +19,6 @@ class SplashViewScreen extends StatelessWidget {
           child: SplashBodyTitle(),
         ),
         Flexible(
-          flex: 1,
           child: SplashBodySubtitle(),
         )
       ],

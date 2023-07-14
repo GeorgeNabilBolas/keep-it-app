@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-import 'intro_body_image.dart';
-import 'intro_body_subtitle.dart';
-import 'intro_body_title.dart';
+import 'intro_page_view_image.dart';
+import 'intro_page_view_subtitle.dart';
+import 'intro_page_view_title.dart';
 
 class IntroPageViewContent extends StatelessWidget {
   const IntroPageViewContent({
@@ -14,7 +14,6 @@ class IntroPageViewContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         IntroPageViewImage(),
         IntroPageViewTitle(),

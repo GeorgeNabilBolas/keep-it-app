@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:keep_it/core/utils/app_paddings.dart';
+
 import 'intro_sliding_button.dart';
 
 class IntroSlidingButtonBody extends StatelessWidget {
@@ -10,7 +12,7 @@ class IntroSlidingButtonBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0),
+      padding: AppPaddings.vertical8,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

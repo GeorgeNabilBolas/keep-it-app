@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:keep_it/core/utils/styles.dart';
+import 'package:keep_it/core/utils/app_strings.dart';
+import 'package:keep_it/core/utils/app_styles_text.dart';
 
 class SplashBodySubtitle extends StatelessWidget {
   const SplashBodySubtitle({
@@ -9,8 +10,8 @@ class SplashBodySubtitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text(
-      'BY\nGEORGE NABIL',
-      style: Styles.labelSmall,
+      AppStrings.directedBy,
+      style: AppTextStyles.text12,
       textAlign: TextAlign.center,
     );
   }

@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import 'package:flutter/services.dart';
+import 'package:keep_it/core/utils/app_colors.dart';
 import 'features/splash/view/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarIconBrightness: Brightness.light,
+      systemNavigationBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.light,
+      statusBarColor: AppColors.primaryColor,
+      systemNavigationBarColor: AppColors.primaryColor,
+      systemNavigationBarDividerColor: AppColors.primaryColor,
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +26,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.light(useMaterial3: true).copyWith(
-          scaffoldBackgroundColor: kPrimaryColor,
+          scaffoldBackgroundColor: AppColors.primaryColor,
         ),
         home: const SplashPage(),
       ),

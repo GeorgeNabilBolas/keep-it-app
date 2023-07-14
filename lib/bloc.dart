@@ -1,7 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'constants.dart';
-
 class SlidingCubit extends Cubit<SlidingState> {
   SlidingCubit() : super(SlidingInitial());
   int _slidingNum = 0;
