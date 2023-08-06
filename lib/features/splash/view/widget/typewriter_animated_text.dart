@@ -1,36 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:keep_it/features/splash/model/typewriter_animated_model.dart';
 
 class TypewriterAnimatedText extends StatelessWidget {
   const TypewriterAnimatedText({
     super.key,
-    required this.text,
-    this.style,
-    required this.indicatorShape,
-    required this.indicatorPulsesNum,
-    this.onEnd,
-    required this.duration,
+    required this.typeWriterModel,
   });
-  final String text;
-  final TextStyle? style;
-  final String indicatorShape;
-  final int indicatorPulsesNum;
-  final void Function()? onEnd;
-  final Duration duration;
+
+  final TypeWriterAnimatedModel typeWriterModel;
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-      duration: duration,
-      tween: StepTween(begin: 0, end: text.length + 2 * indicatorPulsesNum),
+      duration: typeWriterModel.duration,
+      tween: StepTween(
+        begin: 0,
+        end: typeWriterModel.text.length +
+            2 * typeWriterModel.indicatorPulsesNum,
+      ),
       builder: (context, steps, child) {
         return Padding(
           padding: textPadding(context),
           child: Text(
             showText(steps),
-            style: style,
+            style: typeWriterModel.style,
           ),
         );
       },
-      onEnd: onEnd,
+      onEnd: typeWriterModel.onEnd,
     );
   }
 
@@ -40,27 +36,34 @@ class TypewriterAnimatedText extends StatelessWidget {
     bool showSuffixIndicator = suffixIndicatorCheck(steps);
     bool showPrefixIndicator = steps.isOdd;
 
-    String suffixIndicator = showSuffixIndicator ? indicatorShape : '';
-    String prefixIndicator = showPrefixIndicator ? indicatorShape : '';
-    return steps >= 0 && steps <= indicatorPulsesNum
+    String suffixIndicator =
+        showSuffixIndicator ? typeWriterModel.indicatorShape : '';
+    String prefixIndicator =
+        showPrefixIndicator ? typeWriterModel.indicatorShape : '';
+    return steps >= 0 && steps <= typeWriterModel.indicatorPulsesNum
         ? prefixIndicator
         : textValue(steps) + suffixIndicator;
   }
 
   bool suffixIndicatorCheck(int steps) {
-    if (steps - indicatorPulsesNum <= text.length) {
+    if (steps - typeWriterModel.indicatorPulsesNum <=
+        typeWriterModel.text.length) {
       return true;
-    } else if (steps - indicatorPulsesNum >= text.length && steps.isOdd) {
+    } else if (steps - typeWriterModel.indicatorPulsesNum >=
+            typeWriterModel.text.length &&
+        steps.isOdd) {
       return true;
     }
     return false;
   }
 
   String textValue(int steps) {
-    if (steps - indicatorPulsesNum <= text.length) {
-      return text.substring(0, steps - indicatorPulsesNum);
+    if (steps - typeWriterModel.indicatorPulsesNum <=
+        typeWriterModel.text.length) {
+      return typeWriterModel.text
+          .substring(0, steps - typeWriterModel.indicatorPulsesNum);
     } else {
-      return text.substring(0, text.length);
+      return typeWriterModel.text.substring(0, typeWriterModel.text.length);
     }
   }
 
@@ -68,7 +71,9 @@ class TypewriterAnimatedText extends StatelessWidget {
 
   EdgeInsets textPadding(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
-    final double textWidth = textSize(text: text, style: style).width;
+    final double textWidth =
+        textSize(text: typeWriterModel.text, style: typeWriterModel.style)
+            .width;
     return EdgeInsets.only(left: (screenWidth - textWidth) / 2);
   }
 
