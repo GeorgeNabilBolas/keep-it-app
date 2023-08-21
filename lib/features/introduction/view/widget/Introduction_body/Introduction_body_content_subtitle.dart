@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:keep_it/core/utils/styles/app_paddings.dart';
-import 'package:keep_it/core/utils/styles/app_styles_text.dart';
+
+import '../../../../../core/utils/styles/app_paddings.dart';
+import '../../../../../core/utils/styles/app_styles_text.dart';
 
 class IntroductionBodyContentSubtitle extends StatelessWidget {
   const IntroductionBodyContentSubtitle({

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:keep_it/core/utils/styles/app_strings.dart';
-import 'package:keep_it/core/utils/styles/app_styles_text.dart';
+
+import '../../../../core/utils/styles/app_strings.dart';
+import '../../../../core/utils/styles/app_styles_text.dart';
 
 class SplashSubtitle extends StatelessWidget {
   const SplashSubtitle({

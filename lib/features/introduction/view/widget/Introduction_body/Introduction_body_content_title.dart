@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:keep_it/core/utils/styles/app_colors.dart';
-import 'package:keep_it/core/utils/styles/app_paddings.dart';
-import 'package:keep_it/core/utils/styles/app_styles_text.dart';
+import 'package:keep_it/core/utils/styles/app_decorations.dart';
 
-import '../../../../../core/utils/styles/app_border_radius.dart';
+import '../../../../../core/utils/styles/app_paddings.dart';
+import '../../../../../core/utils/styles/app_styles_text.dart';
 
 class IntroductionBodyContentTitle extends StatelessWidget {
   const IntroductionBodyContentTitle({
@@ -14,16 +13,12 @@ class IntroductionBodyContentTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: const BoxDecoration(
-          color: AppColors.blueLight,
-          borderRadius: BorderRadius.all(AppBorderRadius.circular15)),
-      child: Padding(
-        padding: AppPaddings.introTitle,
-        child: Text(
-          title,
-          style: AppTextStyles.text30,
-        ),
+    return Container(
+      padding: AppPaddings.introTitle,
+      decoration: AppDecorations.introTitle,
+      child: Text(
+        title,
+        style: AppTextStyles.text30,
       ),
     );
   }

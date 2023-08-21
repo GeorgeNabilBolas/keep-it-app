@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:keep_it/core/utils/styles/app_colors.dart';
+import 'package:keep_it/core/utils/styles/app_decorations.dart';
+import 'package:keep_it/core/utils/styles/app_dimension.dart';
 
 class IntroductionAppBar extends StatelessWidget {
   const IntroductionAppBar({
@@ -8,17 +9,10 @@ class IntroductionAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
-      height: MediaQuery.of(context).size.height / 2.2,
-      decoration: BoxDecoration(
-        color: AppColors.blueLight,
-        borderRadius: BorderRadiusDirectional.vertical(
-          bottom: Radius.elliptical(
-            MediaQuery.of(context).size.width,
-            MediaQuery.of(context).size.height / 3,
-          ),
-        ),
-      ),
+      height: size.height / AppDimension.introAppBarHeight,
+      decoration: AppDecorations.introAppBar(size),
     );
   }
 }

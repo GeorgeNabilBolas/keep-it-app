@@ -24,10 +24,21 @@ abstract class AppStrings {
     'Pocket',
     'Headset',
   ];
-  static const List<String> homeSubtitle = [
+  static const List<String> homeListTileSubtitle = [
     "Alarm when charger is disconnected",
     "Alarm when mobile move",
     "Alarm when mobile out of the pocket",
     "Alarm when headset is disconnected",
   ];
+  static const List<String> homeDialogSubtitle = [
+    'First connect your phone to the charger then click on activate button',
+    'First keep your phone motionless then click on activate button',
+    'First click on activate button, then you will have 5 seconds to put your phone on your pocket without alarming',
+    'comming soon',
+  ];
+  static const activate = 'Activate';
+  static const deactivate = 'Deactivate';
+  static const dialogPermissionsTitle = 'Permissions';
+  static const dialogPermissionsSubTitle =
+      'App required allowance to some permissions before starting';
 }

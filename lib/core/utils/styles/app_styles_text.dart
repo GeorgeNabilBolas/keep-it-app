@@ -17,15 +17,20 @@ abstract class AppTextStyles {
     fontSize: 36,
     fontWeight: FontWeight.w900,
   );
+  static const text22 = TextStyle(
+    color: AppColors.blueDark,
+    fontSize: 22,
+    fontWeight: FontWeight.w800,
+  );
   static const text18 = TextStyle(
     color: AppColors.blueDark,
     fontSize: 18,
     fontWeight: FontWeight.normal,
   );
-  static const text22 = TextStyle(
-    color: AppColors.blueDark,
-    fontSize: 22,
-    fontWeight: FontWeight.w800,
+  static const text14 = TextStyle(
+    color: AppColors.primaryColor,
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
   );
   static const text12 = TextStyle(
     color: AppColors.blueDark,

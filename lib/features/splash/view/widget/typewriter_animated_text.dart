@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:keep_it/features/splash/model/typewriter_animated_model.dart';
+
+import '../../model/typewriter_animated_model.dart';
 
 class TypewriterAnimatedText extends StatelessWidget {
   const TypewriterAnimatedText({

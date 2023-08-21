@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../../core/utils/styles/app_dimension.dart';
+
 class IntroductionBodyContentImage extends StatelessWidget {
   const IntroductionBodyContentImage({
     super.key,
@@ -9,8 +11,14 @@ class IntroductionBodyContentImage extends StatelessWidget {
   final String image;
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      image,
+    Size size = MediaQuery.of(context).size;
+
+    return SizedBox(
+      height: size.height / AppDimension.introAppBarHeight,
+      width: size.width * .6,
+      child: SvgPicture.asset(
+        image,
+      ),
     );
   }
 }

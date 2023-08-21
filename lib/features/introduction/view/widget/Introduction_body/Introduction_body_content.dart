@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:keep_it/core/utils/styles/app_dimension.dart';
-import 'package:keep_it/features/introduction/model/intro_model.dart';
+import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/styles/app_dimension.dart';
+import '../../../model/intro_model.dart';
 import 'Introduction_body_content_image.dart';
 import 'Introduction_body_content_subtitle.dart';
 import 'Introduction_body_content_title.dart';
@@ -15,14 +15,9 @@ class IntroductionBodyContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Column(
       children: [
-        SizedBox(
-          height: size.height / 2.2,
-          width: size.width / 1.8,
-          child: IntroductionBodyContentImage(image: introModel.image),
-        ),
+        IntroductionBodyContentImage(image: introModel.image),
         const SizedBox(height: AppDimension.introImageAndTitleSpacing),
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
