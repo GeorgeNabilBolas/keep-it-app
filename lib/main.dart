@@ -7,7 +7,6 @@ import 'features/splash/view/splash_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
   Bloc.observer = SimpleBlocObserver();
   runApp(const MyApp());
 }

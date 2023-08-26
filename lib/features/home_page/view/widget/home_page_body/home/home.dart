@@ -6,7 +6,7 @@ import '../../../../../../core/utils/styles/app_info.dart';
 import '../../../../../../core/utils/styles/app_paddings.dart';
 import '../../../../../../core/utils/styles/app_strings.dart';
 import '../../../../model/home_model.dart';
-import '../../../../view-model/is_permissions_allowed_cubit.dart';
+import '../../../../view-model/home_feature_cubits/selected_feature_cubit.dart';
 import 'home_widget.dart';
 
 class Home extends StatelessWidget {
@@ -16,34 +16,29 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+      separatorBuilder: (context, index) {
+        return const Padding(padding: AppPaddings.homePageContentSpacing);
+      },
       shrinkWrap: true,
       itemCount: AppInfo.numberOfHomeListTiles,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: contentSpacing(index),
-          child: Material(
-            child: BlocProvider(
-              create: (context) => IsFeatureWorkCubit(),
-              child: HomeWidget(
-                homeModel: HomeModel(
-                  title: AppStrings.homeTitle[index],
-                  listTileSubTitle: AppStrings.homeListTileSubtitle[index],
-                  listTileImage: AppImages.homeListTileImage[index],
-                  dialogImage: AppImages.homeDialogContentImage[index],
-                  dialogSubTitle: AppStrings.homeDialogSubtitle[index],
-                ),
+        return Material(
+          child: BlocProvider(
+            create: (context) => SelectedFeatureCubit(),
+            child: HomeWidget(
+              homeModel: HomeModel(
+                id: index.toString(),
+                title: AppStrings.homeTitle[index],
+                listTileSubTitle: AppStrings.homeListTileSubtitle[index],
+                listTileImage: AppImages.homeListTileImage[index],
+                dialogImage: AppImages.homeDialogContentImage[index],
+                dialogSubTitle: AppStrings.homeDialogSubtitle[index],
               ),
             ),
           ),
         );
       },
     );
-  }
-
-  EdgeInsets contentSpacing(int index) {
-    return index == AppInfo.numberOfHomeListTiles - 1
-        ? AppPaddings.homePageContentSpacing.copyWith(bottom: 0)
-        : AppPaddings.homePageContentSpacing;
   }
 }

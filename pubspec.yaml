@@ -29,6 +29,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   auto_start_flutter: ^0.1.1
+  flutter_native_splash: ^2.3.2
+  battery_plus: ^4.0.2
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
@@ -42,13 +44,19 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+
 flutter_launcher_icons:
-  android: "launcher_icon"
+  android: true
   ios: true
   adaptive_icon_background: "assets/images/app_icon_background.png"
   adaptive_icon_foreground: "assets/images/app_icon.png"
   image_path: "assets/images/app_icon.png"
-  min_sdk_android: 21 # android min sdk min:16, default 21
+flutter_native_splash:
+  color: "#f3f6fa"
+  android_12:
+    color: "#f3f6fa"
+    background_color: "#f3f6fa"
+    image: "assets/images/app_icon_background.png"
 
 
 # For information on the generic Dart part of this file, see the

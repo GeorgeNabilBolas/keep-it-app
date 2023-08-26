@@ -1,15 +1,18 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 
-import 'draw_overlays_state.dart';
-
-class DrawOverlaysCubit extends Cubit<DrawOverlaysState> {
-  DrawOverlaysCubit() : super(DrawOverlaysInitialState());
+class DrawOverlaysCubit extends Cubit<bool> {
+  DrawOverlaysCubit() : super(false);
   Future<void> checkCanDrawOverlaysPermission() async {
     if (await FlutterForegroundTask.canDrawOverlays) {
-      emit(AllowDrawOverlaysState());
+      emit(true);
     } else if ((!await FlutterForegroundTask.canDrawOverlays)) {
-      emit(PreventDrawOverlaysState());
+      emit(false);
     }
+  }
+
+  Future<void> showDrawOverLays() async {
+    await FlutterForegroundTask.openSystemAlertWindowSettings();
+    await checkCanDrawOverlaysPermission();
   }
 }

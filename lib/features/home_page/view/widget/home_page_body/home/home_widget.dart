@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,8 +10,7 @@ import '../../../../../../core/utils/styles/app_dimension.dart';
 import '../../../../../../core/utils/styles/app_paddings.dart';
 import '../../../../../../core/utils/styles/app_styles_text.dart';
 import '../../../../model/home_model.dart';
-import '../../../../view-model/is_permissions_allowed_cubit.dart';
-import 'listTile_dialog/listTile_dialog.dart';
+import '../../../../view-model/home_feature_cubits/selected_feature_cubit.dart';
 import 'listTile_dialog/listTile_icon.dart';
 
 class HomeWidget extends StatelessWidget {
@@ -20,7 +21,6 @@ class HomeWidget extends StatelessWidget {
   final HomeModel homeModel;
   @override
   Widget build(BuildContext context) {
-    final myCubit = BlocProvider.of<IsFeatureWorkCubit>(context);
     return ListTile(
       minVerticalPadding: AppDimension.homeListTileMinVerticalPadding,
       minLeadingWidth: AppDimension.homeListTileMinLeadingWidth,
@@ -30,9 +30,10 @@ class HomeWidget extends StatelessWidget {
         homeModel.listTileImage,
         height: AppDimension.homeListTileMinLeadingWidth,
       ),
-      trailing: BlocBuilder<IsFeatureWorkCubit, bool>(
+      trailing: BlocBuilder<SelectedFeatureCubit, bool>(
         builder: (context, state) {
-          myCubit.getFeature(homeModel.title);
+          BlocProvider.of<SelectedFeatureCubit>(context)
+              .updateFeatureState(homeModel.id);
           return ListTileIcon(isPermissionAllowed: state);
         },
       ),
@@ -42,15 +43,9 @@ class HomeWidget extends StatelessWidget {
       titleTextStyle: AppTextStyles.text22,
       contentPadding: AppPaddings.homeListTileContentPadding,
       shape: AppDecorations.homeListTile,
-      onTap: () => onTap(context, myCubit),
-    );
-  }
-
-  void onTap(BuildContext context, IsFeatureWorkCubit myCubit) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return ListTileDialog(homeModel: homeModel, cubit: myCubit);
+      onTap: () async {
+        final myCubit = BlocProvider.of<SelectedFeatureCubit>(context);
+        await myCubit.onFeatureTap(context, homeModel);
       },
     );
   }

@@ -1,16 +1,19 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 
-import 'battery_optimizations_state.dart';
-
-class BatteryOptimizationsCubit extends Cubit<BatteryOptimizationsState> {
-  BatteryOptimizationsCubit() : super(BatteryOptimizationsInitialState());
+class BatteryOptimizationsCubit extends Cubit<bool> {
+  BatteryOptimizationsCubit() : super(false);
 
   Future<void> checkBatteryOptimizationsPermission() async {
     if (await FlutterForegroundTask.isIgnoringBatteryOptimizations) {
-      emit(AllowBatteryOptimizationsState());
+      emit(true);
     } else if (!await FlutterForegroundTask.isIgnoringBatteryOptimizations) {
-      emit(PreventBatteryOptimizationsState());
+      emit(false);
     }
+  }
+
+  Future<void> showBatteryOptimizations() async {
+    await FlutterForegroundTask.requestIgnoreBatteryOptimization();
+    await checkBatteryOptimizationsPermission();
   }
 }

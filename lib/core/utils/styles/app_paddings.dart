@@ -28,7 +28,7 @@ class AppPaddings {
     horizontal: 25,
     vertical: 5,
   );
-  static const homePageContentSpacing = EdgeInsets.only(bottom: 16);
+  static const homePageContentSpacing = EdgeInsets.all(8);
   static const homeListTileContentPadding =
       EdgeInsets.symmetric(vertical: 10, horizontal: 20);
   static const homeDialogMargin = EdgeInsets.only(top: 30, left: 25, right: 25);
