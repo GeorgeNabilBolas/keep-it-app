@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 
 import 'package:keep_it/core/utils/styles/app_strings.dart';
 import 'package:keep_it/features/home_page/view-model/home_feature_cubits/generate_feature_state.dart';
@@ -25,7 +26,7 @@ class ListTileDialogButton extends StatelessWidget {
           await state.showPermissionDialog(context);
         } else if (state is IsNotRequirePermissionState) {
           Navigator.pop(context);
-          await state.setFeatureActivation(id, cubit);
+          await state.setFeatureActivation(id, cubit, context);
         }
       },
       child: DialogButton(

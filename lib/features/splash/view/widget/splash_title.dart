@@ -10,8 +10,8 @@ import '../../../../core/utils/styles/app_strings.dart';
 import '../../../../core/utils/styles/app_styles_text.dart';
 import '../../../home_page/view/home_page.dart';
 import '../../../introduction/view/introduction_page.dart';
-import '../../model/typewriter_animated_model.dart';
-import 'typewriter_animated_text.dart';
+import '../../../../core/utils/models/typewriter_animated_model.dart';
+import '../../../../core/utils/widgets/typewriter_animated_text.dart';
 
 class SplashTitle extends StatelessWidget {
   const SplashTitle({

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 
 import '../../../../../../../../core/utils/styles/app_colors.dart';
 import '../../../../../view-model/permissions_cubits/battery_optimizations_cubit.dart';

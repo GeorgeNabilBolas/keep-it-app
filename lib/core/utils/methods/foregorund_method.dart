@@ -1,6 +1,9 @@
 import 'dart:isolate';
 
+import 'package:battery_plus/battery_plus.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void startCallback() {
   FlutterForegroundTask.setTaskHandler(MyTaskHandler());
@@ -27,17 +30,13 @@ void initForegroundTask() {
       playSound: false,
     ),
     foregroundTaskOptions: const ForegroundTaskOptions(
-      interval: 250,
+      interval: 1000,
       isOnceEvent: false,
       autoRunOnBoot: true,
       allowWakeLock: true,
       allowWifiLock: true,
     ),
   );
-}
-
-Future<bool> stopForegroundTask() async {
-  return await FlutterForegroundTask.stopService();
 }
 
 Future<bool> startForegroundTask() async {
@@ -50,15 +49,41 @@ Future<bool> startForegroundTask() async {
 
 class MyTaskHandler implements TaskHandler {
   dynamic title;
+  String? batteryFeature;
+  String? motionFeature;
+  String? pocketFeature;
+  String? headsetFeature;
+  var battery = Battery();
+
   //don't use sendPort without implements recivePort
   @override
   Future<void> onStart(DateTime timestamp, SendPort? sendPort) async {
     title = await FlutterForegroundTask.getData(key: 'title');
+    batteryFeature = await FlutterForegroundTask.getData(key: '0');
+    motionFeature = await FlutterForegroundTask.getData(key: '1');
+    pocketFeature = await FlutterForegroundTask.getData(key: '2');
+    headsetFeature = await FlutterForegroundTask.getData(key: '3');
   }
 
   @override
   Future<void> onRepeatEvent(DateTime timestamp, SendPort? sendPort) async {
     title = await FlutterForegroundTask.getData(key: 'title');
+    batteryFeature = await FlutterForegroundTask.getData(key: '0');
+    if (batteryFeature != null) {
+      await checkBattery();
+    }
+    motionFeature = await FlutterForegroundTask.getData(key: '1');
+    if (motionFeature != null) {
+      print('motionFeature');
+    }
+    pocketFeature = await FlutterForegroundTask.getData(key: '2');
+    if (pocketFeature != null) {
+      print('pocketFeature');
+    }
+    headsetFeature = await FlutterForegroundTask.getData(key: '3');
+    if (headsetFeature != null) {
+      print('headsetFeature');
+    }
 
     FlutterForegroundTask.updateService(
       notificationTitle: '$title',
@@ -67,12 +92,23 @@ class MyTaskHandler implements TaskHandler {
     );
   }
 
+  Future<void> checkBattery() async {
+    if (await battery.batteryState == BatteryState.discharging) {
+      FlutterForegroundTask.wakeUpScreen();
+      FlutterForegroundTask.launchApp('alert');
+    }
+  }
+
   @override
-  Future<void> onDestroy(DateTime timestamp, SendPort? sendPort) async {}
+  Future<void> onDestroy(DateTime timestamp, SendPort? sendPort) async {
+    print('onDestroy done');
+  }
 
   @override
   void onNotificationButtonPressed(String id) {}
 
   @override
-  void onNotificationPressed() => FlutterForegroundTask.launchApp("home");
+  void onNotificationPressed() => FlutterForegroundTask.launchApp("alert");
 }
+
+/////////////////////////////////////////////////////////

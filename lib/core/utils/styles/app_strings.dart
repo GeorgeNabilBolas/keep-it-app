@@ -31,10 +31,10 @@ abstract class AppStrings {
     "Alarm when headset is disconnected",
   ];
   static const List<String> homeDialogSubtitle = [
-    'First connect your phone to the charger then click on activate button',
-    'First keep your phone motionless then click on activate button',
-    'First click on activate button, then you will have 5 seconds to put your phone on your pocket without alarming',
-    'comming soon',
+    'First connect your phone to the charger then click on activate button.',
+    'First keep your phone motionless then click on activate button.',
+    'First click on activate button, then you will have 5 seconds to put your phone on your pocket without alarming.',
+    'comming soon.',
   ];
   static const activate = 'Activate';
   static const deactivate = 'Deactivate';

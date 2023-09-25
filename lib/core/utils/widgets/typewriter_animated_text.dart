@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../model/typewriter_animated_model.dart';
+import '../models/typewriter_animated_model.dart';
 
 class TypewriterAnimatedText extends StatelessWidget {
   const TypewriterAnimatedText({
@@ -20,7 +20,9 @@ class TypewriterAnimatedText extends StatelessWidget {
       ),
       builder: (context, steps, child) {
         return Padding(
-          padding: textPadding(context),
+          padding: typeWriterModel.isLeftToRight == true
+              ? EdgeInsets.all(0)
+              : textPadding(context),
           child: Text(
             showText(steps),
             style: typeWriterModel.style,

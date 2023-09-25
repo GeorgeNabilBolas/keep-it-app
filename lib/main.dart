@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keep_it/core/utils/styles/app_colors.dart';
+import 'package:keep_it/features/alert/view/alert_page.dart';
 import 'core/app_simple_bloc_observer.dart';
-import 'features/home_page/view/home_page.dart';
 import 'features/splash/view/splash_page.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: MaterialApp(
-        routes: {'home': (context) => const HomePage()},
+        routes: {'alert': (context) => const AlertPage()},
         debugShowCheckedModeBanner: false,
         theme: ThemeData.light(useMaterial3: true).copyWith(
           scaffoldBackgroundColor: AppColors.primaryColor,
@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 // import 'dart:io';
 // import 'dart:isolate';
 
@@ -50,7 +49,7 @@ class MyApp extends StatelessWidget {
 
 //   // Called when the task is started.
 //   @override
-//   Future<void> onStart(DateTime timestamp, SendPort? sendPort) async {
+//   onStart(DateTime timestamp, SendPort? sendPort) async {
 //     _sendPort = sendPort;
 
 //     // You can use the getData function to get the stored data.
@@ -61,7 +60,7 @@ class MyApp extends StatelessWidget {
 
 //   // Called every [interval] milliseconds in [ForegroundTaskOptions].
 //   @override
-//   Future<void> onRepeatEvent(DateTime timestamp, SendPort? sendPort) async {
+//   onRepeatEvent(DateTime timestamp, SendPort? sendPort) async {
 //     FlutterForegroundTask.updateService(
 //       notificationTitle: 'MyTaskHandler',
 //       notificationText: 'eventCount: $_eventCount',
@@ -75,7 +74,7 @@ class MyApp extends StatelessWidget {
 
 //   // Called when the notification button on the Android platform is pressed.
 //   @override
-//   Future<void> onDestroy(DateTime timestamp, SendPort? sendPort) async {
+//   onDestroy(DateTime timestamp, SendPort? sendPort) async {
 //     print('onDestroy');
 //   }
 
@@ -125,7 +124,6 @@ class MyApp extends StatelessWidget {
 //   ReceivePort? _receivePort;
 
 //   Future<void> _requestPermissionForAndroid() async {
-//     print('object');
 //     if (!Platform.isAndroid) {
 //       return;
 //     }
@@ -163,8 +161,8 @@ class MyApp extends StatelessWidget {
 //     FlutterForegroundTask.init(
 //       androidNotificationOptions: AndroidNotificationOptions(
 //         id: 500,
-//         channelId: 'notification_channel_id',
-//         channelName: 'Foreground Notification',
+//         channelId: 'foreground_service',
+//         channelName: 'Foreground Service Notification',
 //         channelDescription:
 //             'This notification appears when the foreground service is running.',
 //         channelImportance: NotificationChannelImportance.LOW,
@@ -215,7 +213,7 @@ class MyApp extends StatelessWidget {
 //     }
 
 //     if (await FlutterForegroundTask.isRunningService) {
-//       return FlutterForegroundTask.updateService();
+//       return FlutterForegroundTask.restartService();
 //     } else {
 //       return FlutterForegroundTask.startService(
 //         notificationTitle: 'Foreground Service is running',

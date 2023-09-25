@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class TypeWriterAnimatedModel {
   const TypeWriterAnimatedModel({
+    this.isLeftToRight,
     required this.text,
     this.style,
     required this.indicatorShape,
@@ -15,4 +16,5 @@ class TypeWriterAnimatedModel {
   final int indicatorPulsesNum;
   final void Function()? onEnd;
   final Duration duration;
+  final bool? isLeftToRight;
 }
