@@ -12,7 +12,8 @@ The app provides distinct security alarms and a guided user experience, as illus
 
 | Feature/Screen | Description | Screenshot(s) |
 | :--- | :--- | :--- |
-| **Welcome/Onboarding** | A visually guided introduction for first-time users, explaining the app's purpose and key features. | `1.png`, `2.png`, `3.png` |
+| **Welcome/Onboarding** | A visually guided introduction for first-time users, explaining the app's purpose and key features. |<img width="864" height="2016" alt="1" src="https://github.com/user-attachments/assets/dd9ecfd3-5897-4d0c-988d-77c2bccaf1be" />
+|
 | **Home Screen** | The central hub where users can view and toggle the status of all alarms. Features a sliding menu for navigation. | `4.png`, `5.png` |
 | **Charger Alarm** | Triggers a loud alarm when the device is disconnected from the charging cable. | `4.png` (Top Toggle) |
 | **Motion Alarm** | Triggers a loud alarm when the device is moved from its resting position. | `4.png` (Middle Toggle) |
