@@ -1,76 +1,80 @@
-# KEEP IT.
+# KEEP IT. - Anti-Theft Security Alarm
 
 ## 📱 Project Overview
 
-**KEEP IT.** is a cross-platform mobile application built with Flutter that functions as an **anti-theft and security alarm system** for your device. It is designed to run silently in the background using a **Foreground Service** and alert you when unauthorized interactions occur with your phone.
+**KEEP IT.** is a modern, cross-platform mobile application built with **Flutter** designed to protect your device from unauthorized access and theft. It operates silently in the background using a **Foreground Service** to constantly monitor for security breaches, such as unplugging the charger, unexpected movement, or removing the phone from a pocket.
 
-The application includes an onboarding experience (`IntroductionPage`) for first-time users and a `HomePage` to manage its security features.
+The application features a clean, intuitive UI with a clear **Onboarding** process and a centralized **Home Screen** for managing all alarm functionalities.
 
-## ✨ Core Features
+## ✨ Features & Screens
 
-The app provides several distinct security alarms, manageable from the main screen:
+The app provides distinct security alarms and a guided user experience, as illustrated by the screenshots:
 
-* **Charger Alarm**: Alarms when the charger cable is disconnected.
-* **Motion Alarm**: Alarms when the mobile device is moved.
-* **Pocket Alarm**: Alarms when the mobile is taken out of a pocket.
-* **Headset Alarm**: Planned feature to alarm when the headset is disconnected.
+| Feature/Screen | Description | Screenshot(s) |
+| :--- | :--- | :--- |
+| **Welcome/Onboarding** | A visually guided introduction for first-time users, explaining the app's purpose and key features. | `1.png`, `2.png`, `3.png` |
+| **Home Screen** | The central hub where users can view and toggle the status of all alarms. Features a sliding menu for navigation. | `4.png`, `5.png` |
+| **Charger Alarm** | Triggers a loud alarm when the device is disconnected from the charging cable. | `4.png` (Top Toggle) |
+| **Motion Alarm** | Triggers a loud alarm when the device is moved from its resting position. | `4.png` (Middle Toggle) |
+| **Pocket Alarm** | Triggers an alarm when the device is removed from a pocket or bag (likely using the proximity sensor). | `4.png` (Bottom Toggle) |
+| **Alarm Activation** | When an alarm is activated (e.g., Charger Alarm is ON), the corresponding card visually changes (e.g., to a red/active state). | `6.png` |
+| **Deactivation Prompt** | A full-screen overlay that appears when an alarm is triggered, requiring the user to enter a specific code/pattern to silence the alarm. **(Crucial anti-theft step)**. | `7.png`, `8.png`, `9.png` |
+| **Settings/About Screen** | Accessible via the sliding menu, this section allows users to manage app settings, view an 'About' page, or get help. | `10.png` |
 
 ## 🛠️ Tech Stack & Dependencies
 
-The project is a standard Flutter application but utilizes several powerful packages for its core functionality:
+The project is a standard Flutter application, relying on the following key packages (based on the previous file analysis):
 
-| Package | Purpose |
-| :--- | :--- |
-| **`flutter_bloc`** | State management using Cubits (e.g., `SlidingCubit`, `NavigationbarCubit`, `GenerateFeatureCubit`). |
-| **`flutter_foreground_task`** | To run persistent tasks (like monitoring sensors/ports) in the background. |
-| **`permission_handler`** | To request necessary system permissions, such as notifications and drawing over other apps. |
-| **`battery_plus`** | Used specifically for monitoring the device's battery state (e.g., detecting charger disconnect). |
-| **`flutter_svg`** | For rendering SVG assets used throughout the UI (e.g., home page content and dialogs). |
-| **`shared_preferences`** | To persist simple data, such as the feature activation status and whether the user is a first-time runner (`isFirstRun`). |
+* **Flutter:** Cross-platform mobile development framework.
+* **`flutter_bloc`:** State management for predictable and testable application logic.
+* **`flutter_foreground_task`:** Essential for running persistent anti-theft monitoring in the device background.
+* **`permission_handler`:** To manage and request critical system permissions (e.g., Draw over other apps).
+* **`battery_plus`:** To monitor the charging state for the Charger Alarm.
+* **`shared_preferences`:** To persist user settings and first-run status.
 
 ## ⚙️ Getting Started
-
-This project is a starting point for a Flutter application.
 
 ### Prerequisites
 
 * Flutter SDK installed and configured.
-* Android and iOS development environments set up.
+* Android and/or iOS development environment set up.
 
 ### Installation
 
 1.  Clone the repository:
     ```bash
-    git clone [your_repo_url] keep-it-app-main
+    git clone https://github.com/GeorgeNabilBolas/keep-it-app keep-it-app-main
     cd keep-it-app-main
     ```
-
-2.  Install the necessary dependencies:
+2.  Install dependencies:
     ```bash
     flutter pub get
     ```
-
-3.  Run the application on a connected device or emulator:
+3.  Run the application:
     ```bash
     flutter run
     ```
 
-### Important Notes for Android
+### ⚠️ Android Specifics
 
-The application requires several special permissions to function correctly in the background and override the screen:
+Due to the nature of a persistent security application, the Android version requires several special permissions:
 
-* `android.permission.FOREGROUND_SERVICE`
-* `android.permission.WAKE_LOCK`
-* `android.permission.SYSTEM_ALERT_WINDOW` (Draw over other apps)
-* `android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`
-* `android.permission.POST_NOTIFICATIONS` (For Android 13+)
+* **Background Execution (`FOREGROUND_SERVICE`):** To keep the monitoring running indefinitely.
+* **Display Over Other Apps (`SYSTEM_ALERT_WINDOW`):** To display the mandatory deactivation screen (`7.png`, `8.png`) over the alarm lock screen.
+* **Battery Optimization Ignorance (`REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`):** To prevent the OS from killing the background service.
 
-The application will prompt the user to grant these permissions when required.
+The app is designed to request these permissions from the user via prompts when they first try to activate an alarm.
 
-## 📖 Resources
+## 🚀 Future Development
 
-For help getting started with Flutter development, view the online documentation:
+* Implement the planned **Headset Alarm** feature.
+* Add customizable alarm sounds and volume control.
+* Implement a secure PIN/Password system for alarm deactivation.
 
-* [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-* [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-* [Flutter online documentation](https://docs.flutter.dev/)
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue.
+
+## 📄 License
+
+This project is public for education
