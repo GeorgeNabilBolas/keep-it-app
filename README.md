@@ -12,9 +12,7 @@ The app provides distinct security alarms and a guided user experience, as illus
 
 | Feature/Screen | Description | Screenshot(s) |
 | :--- | :--- | :--- |
-| **Welcome/Onboarding** | A visually guided introduction for first-time users, explaining the app's purpose and key features. | <img width="40" height="100" alt="1" src="https://github.com/user-attachments/assets/b7baf784-b718-4273-b5b7-93307dd933bf" />
-,<img width="40" height="100" alt="2" src="https://github.com/user-attachments/assets/6b1ad331-1916-4183-8cd8-dcc6d827edaa" />
-, <img width="864" height="2016" alt="3" src="https://github.com/user-attachments/assets/3749bbd1-e5d3-43aa-8670-6bdbcd75bd71" />
+| **Welcome/Onboarding** | A visually guided introduction for first-time users, explaining the app's purpose and key features. | <img width="400" height="1000" alt="1" src="https://github.com/user-attachments/assets/b7baf784-b718-4273-b5b7-93307dd933bf" />,<img width="400" height="1000" alt="2" src="https://github.com/user-attachments/assets/6b1ad331-1916-4183-8cd8-dcc6d827edaa" />,<img width="400" height="100" alt="3" src="https://github.com/user-attachments/assets/3749bbd1-e5d3-43aa-8670-6bdbcd75bd71" />
 |
 | **Home Screen** | The central hub where users can view and toggle the status of all alarms. Features a sliding menu for navigation. | `4.png`, `5.png` |
 | **Charger Alarm** | Triggers a loud alarm when the device is disconnected from the charging cable. | `4.png` (Top Toggle) |
