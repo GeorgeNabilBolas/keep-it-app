@@ -1,123 +1,76 @@
-# Keep It
+# KEEP IT.
 
-A Flutter application designed to manage persistent tasks, permissions, and foreground services. It appears to focus on keeping the app active in the background (e.g., for notifications, battery optimization, and overlays), with features like an introduction slider, home screen for permission management, and alert functionality. Built with Flutter Bloc for state management and supports multiple platforms including Android, iOS, web, Windows, macOS, and Linux.
+## 📱 Project Overview
 
-## Features
+**KEEP IT.** is a cross-platform mobile application built with Flutter that functions as an **anti-theft and security alarm system** for your device. It is designed to run silently in the background using a **Foreground Service** and alert you when unauthorized interactions occur with your phone.
 
-- **Splash Screen**: Initial loading screen with animated title and subtitle.
-- **Introduction Slider**: Onboarding screens with SVG illustrations, titles, subtitles, and navigation buttons (Next, Skip, Go).
-- **Home Page**: 
-  - Bottom navigation bar for switching features.
-  - Permission management for notifications, battery optimizations, and draw overlays.
-  - Dialogs and list tiles for user interactions (e.g., feature selection, permissions setup).
-- **Alert Page**: Dedicated screen for alerts or notifications.
-- **Foreground Task Support**: Integration with `flutter_foreground_task` for running tasks in the background.
-- **Permissions Handling**: Uses `permission_handler` for requesting and managing system permissions.
-- **Custom UI**: 
-  - SVG images for icons and illustrations.
-  - Custom fonts (IntroRust family).
-  - Themed colors, paddings, radii, and text styles.
-- **State Management**: Powered by Flutter Bloc with cubits for navigation, permissions, and features.
-- **Multi-Platform**: Configured for Android, iOS, web, Windows, macOS, and Linux with platform-specific setups (e.g., launch icons, splash screens).
+The application includes an onboarding experience (`IntroductionPage`) for first-time users and a `HomePage` to manage its security features.
 
-## Screenshots
+## ✨ Core Features
 
-*(Add screenshots here if available. For example:)*
-- Splash Screen: ![Splash](path/to/splash.png)
-- Introduction Slider: ![Intro](path/to/intro.png)
-- Home Page: ![Home](path/to/home.png)
-- Permissions Dialog: ![Permissions](path/to/permissions.png)
+The app provides several distinct security alarms, manageable from the main screen:
 
-## Getting Started
+* **Charger Alarm**: Alarms when the charger cable is disconnected.
+* **Motion Alarm**: Alarms when the mobile device is moved.
+* **Pocket Alarm**: Alarms when the mobile is taken out of a pocket.
+* **Headset Alarm**: Planned feature to alarm when the headset is disconnected.
+
+## 🛠️ Tech Stack & Dependencies
+
+The project is a standard Flutter application but utilizes several powerful packages for its core functionality:
+
+| Package | Purpose |
+| :--- | :--- |
+| **`flutter_bloc`** | State management using Cubits (e.g., `SlidingCubit`, `NavigationbarCubit`, `GenerateFeatureCubit`). |
+| **`flutter_foreground_task`** | To run persistent tasks (like monitoring sensors/ports) in the background. |
+| **`permission_handler`** | To request necessary system permissions, such as notifications and drawing over other apps. |
+| **`battery_plus`** | Used specifically for monitoring the device's battery state (e.g., detecting charger disconnect). |
+| **`flutter_svg`** | For rendering SVG assets used throughout the UI (e.g., home page content and dialogs). |
+| **`shared_preferences`** | To persist simple data, such as the feature activation status and whether the user is a first-time runner (`isFirstRun`). |
+
+## ⚙️ Getting Started
+
+This project is a starting point for a Flutter application.
 
 ### Prerequisites
 
-- Flutter SDK (version 3.0.3 or higher): [Install Flutter](https://flutter.dev/docs/get-started/install)
-- Dart SDK (included with Flutter)
-- Android Studio / Xcode for platform-specific builds (optional for emulators/simulators)
+* Flutter SDK installed and configured.
+* Android and iOS development environments set up.
 
 ### Installation
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/GeorgeNabilBolas/keep-it-app.git
-   cd keep-it-app
-   ```
+1.  Clone the repository:
+    ```bash
+    git clone [your_repo_url] keep-it-app-main
+    cd keep-it-app-main
+    ```
 
-2. Install dependencies:
-   ```
-   flutter pub get
-   ```
+2.  Install the necessary dependencies:
+    ```bash
+    flutter pub get
+    ```
 
-3. Generate launcher icons and splash screens (if needed):
-   ```
-   flutter pub run flutter_launcher_icons:main
-   flutter pub run flutter_native_splash:create
-   ```
+3.  Run the application on a connected device or emulator:
+    ```bash
+    flutter run
+    ```
 
-4. Run the app:
-   - On Android/iOS emulator: `flutter run`
-   - On web: `flutter run -d chrome`
-   - On desktop (Windows/macOS/Linux): `flutter run -d windows` (or respective platform)
+### Important Notes for Android
 
-### Building for Release
+The application requires several special permissions to function correctly in the background and override the screen:
 
-- Android: `flutter build apk --release`
-- iOS: `flutter build ios --release`
-- Web: `flutter build web`
-- Windows: `flutter build windows`
-- macOS: `flutter build macos`
-- Linux: `flutter build linux`
+* `android.permission.FOREGROUND_SERVICE`
+* `android.permission.WAKE_LOCK`
+* `android.permission.SYSTEM_ALERT_WINDOW` (Draw over other apps)
+* `android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`
+* `android.permission.POST_NOTIFICATIONS` (For Android 13+)
 
-## Usage
+The application will prompt the user to grant these permissions when required.
 
-1. Launch the app to see the splash screen.
-2. Navigate through the introduction slides.
-3. On the home page, grant necessary permissions (notifications, battery optimization, overlays) via dialogs.
-4. Use the bottom navigation to switch between features.
-5. The app may run a foreground service to "keep" tasks active (e.g., persistent notifications).
+## 📖 Resources
 
-Note: On Android, ensure permissions like `FOREGROUND_SERVICE`, `SYSTEM_ALERT_WINDOW`, and `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` are granted.
+For help getting started with Flutter development, view the online documentation:
 
-## Dependencies
-
-- `app_settings: ^5.0.0` - For opening system settings.
-- `battery_plus: ^4.0.2` - Battery information and optimizations.
-- `flutter_bloc: ^8.1.3` - State management.
-- `flutter_foreground_task: ^6.0.0+1` - Foreground services.
-- `flutter_native_splash: ^2.3.2` - Custom splash screens.
-- `flutter_svg: ^2.0.7` - SVG rendering.
-- `permission_handler: ^10.4.3` - Permission requests.
-- `shared_preferences: ^2.2.0` - Local storage.
-- Dev: `flutter_launcher_icons`, `flutter_lints`, `flutter_test`.
-
-For full details, see [pubspec.yaml](pubspec.yaml).
-
-## Project Structure
-
-- `lib/core/`: Utility classes (e.g., colors, styles, widgets like typewriter animated text).
-- `lib/features/`: Feature modules (alert, home, introduction, splash).
-- `assets/`: Fonts, images (SVGs for home, intro), icons.
-- Platform-specific folders: `android/`, `ios/`, `web/`, `windows/`, etc., with configs for icons, manifests, and entitlements.
-
-## Contributing
-
-Contributions are welcome! Please fork the repo and submit a pull request.
-
-1. Fork the project.
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details (if available; otherwise, assume open-source under MIT).
-
-## Acknowledgments
-
-- Built with [Flutter](https://flutter.dev/).
-- Icons and SVGs from custom assets.
-- Inspired by standard Flutter templates with foreground task examples.
-
-For help getting started with Flutter, view the [online documentation](https://docs.flutter.dev/), which offers tutorials, samples, guidance on mobile development, and a full API reference.
+* [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+* [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* [Flutter online documentation](https://docs.flutter.dev/)
