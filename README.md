@@ -12,12 +12,8 @@ The app provides distinct security alarms and a guided user experience, as illus
 
 | Feature/Screen | Description | Screenshot(s) |
 | :--- | :--- | :--- |
-| **Welcome/Onboarding** | A visually guided introduction for first-time users, explaining the app's purpose and key features. |<img width="864" height="2016" alt="4" src="https://github.com/user-attachments/assets/ee4cce8f-6bbd-4fe4-a3ac-8eee1459fb1f" />
-<img width="864" height="2016" alt="3" src="https://github.com/user-attachments/assets/01002511-cff4-4ef6-b136-a2d105cf7f08" />
-<img width="864" height="2016" alt="2" src="https://github.com/user-attachments/assets/87024c11-6102-4a09-a450-cc0bd6bccc1a" />
-<img width="864" height="2016" alt="1" src="https://github.com/user-attachments/assets/910342f7-14fc-4cc5-abf1-a12a2f073559" />
-<img width="864" height="2016" alt="5" src="https://github.com/user-attachments/assets/885f7ae7-9825-472e-903d-83c219562762" />
-|
+| **Welcome/Onboarding** | A visually guided introduction for first-time users, explaining the app's purpose and key features. | `<img width="864" height="2016" alt="1" src="https://github.com/user-attachments/assets/b7baf784-b718-4273-b5b7-93307dd933bf" />
+`, `2.png`, `3.png` |
 | **Home Screen** | The central hub where users can view and toggle the status of all alarms. Features a sliding menu for navigation. | `4.png`, `5.png` |
 | **Charger Alarm** | Triggers a loud alarm when the device is disconnected from the charging cable. | `4.png` (Top Toggle) |
 | **Motion Alarm** | Triggers a loud alarm when the device is moved from its resting position. | `4.png` (Middle Toggle) |
@@ -48,7 +44,7 @@ The project is a standard Flutter application, relying on the following key pack
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/GeorgeNabilBolas/keep-it-app keep-it-app-main
+    git clone [your_repo_url] keep-it-app-main
     cd keep-it-app-main
     ```
 2.  Install dependencies:
@@ -82,4 +78,4 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 ## 📄 License
 
-This project is public for education
+\[Insert your project's license here, e.g., MIT License]
