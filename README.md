@@ -23,7 +23,19 @@ The app provides distinct security alarms and a guided user experience, as illus
 
 ## 📱 Screenshots
 
-<img width="864" height="2016" alt="13" src="https://github.com/user-attachments/assets/76509f40-a829-4ce0-889a-4ef03c167338" />
+<img width="864" height="2016" alt="1" src="https://github.com/user-attachments/assets/b64083bc-48af-433d-854a-77940c621d1f" />
+<img width="864" height="2016" alt="2" src="https://github.com/user-attachments/assets/fbd7103a-94a3-4eef-bb96-9e100a75620c" />
+<img width="864" height="2016" alt="3" src="https://github.com/user-attachments/assets/5d45ecc3-34d8-4b21-a7e7-ebb865bbedf5" />
+<img width="864" height="2016" alt="4" src="https://github.com/user-attachments/assets/f6de075e-e444-4399-9bf4-ad3bc4c2db3c" />
+<img width="864" height="2016" alt="5" src="https://github.com/user-attachments/assets/ae0f4a80-d497-4da6-b1ba-a8d164d77576" />
+<img width="864" height="2016" alt="6" src="https://github.com/user-attachments/assets/087fce69-e97a-48ad-a4ab-06e4414f7df2" />
+<img width="864" height="2016" alt="7" src="https://github.com/user-attachments/assets/0aee97e4-edc1-4278-8ced-06b3ae538d62" />
+<img width="864" height="2016" alt="8" src="https://github.com/user-attachments/assets/40f78851-258c-455b-9efd-69f7bb8e4d78" />
+<img width="864" height="2016" alt="9" src="https://github.com/user-attachments/assets/4f5ccb02-5db9-43e3-a0c0-ca6cf7464131" />
+<img width="864" height="2016" alt="10" src="https://github.com/user-attachments/assets/892b32c5-8560-46fb-8d95-c6c03811aaea" />
+<img width="864" height="2016" alt="11" src="https://github.com/user-attachments/assets/08ba5b85-1ea0-428f-b8c5-62163906f7c0" />
+<img width="864" height="2016" alt="12" src="https://github.com/user-attachments/assets/1ab0b3f4-1cf1-49e8-93ac-6ba810b59aa2" />
+<img width="864" height="2016" alt="13" src="https://github.com/user-attachments/assets/adc804c2-1f98-406f-9431-81d20a57ad2e" />
 
 
 ## 🛠️ Tech Stack & Dependencies
