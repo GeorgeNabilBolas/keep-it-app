@@ -10,16 +10,21 @@ The application features a clean, intuitive UI with a clear **Onboarding** proce
 
 The app provides distinct security alarms and a guided user experience, as illustrated by the screenshots:
 
-| Feature/Screen | Description | Screenshot(s) |
-| :--- | :--- | :--- |
-| **Welcome/Onboarding** | A visually guided introduction for first-time users, explaining the app's purpose and key features. |<img width="864" height="2016" alt="4" src="https://github.com/user-attachments/assets/5a686eab-9b0b-44e4-b867-30dca1292c12" />,<img width="864" height="2016" alt="3" src="https://github.com/user-attachments/assets/1dbe40a4-5f5f-4391-91e2-f64e31a14840" />,<img width="864" height="2016" alt="2" src="https://github.com/user-attachments/assets/74173c16-5cf8-4409-8497-2288d1ee0a38" />,<img width="864" height="2016" alt="1" src="https://github.com/user-attachments/assets/bc2d1914-6f88-4c74-8d74-4094643aea4b" />,<img width="864" height="2016" alt="5" src="https://github.com/user-attachments/assets/c6b5c86b-da35-433e-8bba-0981bb578732" />|
-| **Home Screen** | The central hub where users can view and toggle the status of all alarms. Features a sliding menu for navigation. | `4.png`, `5.png` |
-| **Charger Alarm** | Triggers a loud alarm when the device is disconnected from the charging cable. | `4.png` (Top Toggle) |
-| **Motion Alarm** | Triggers a loud alarm when the device is moved from its resting position. | `4.png` (Middle Toggle) |
-| **Pocket Alarm** | Triggers an alarm when the device is removed from a pocket or bag (likely using the proximity sensor). | `4.png` (Bottom Toggle) |
-| **Alarm Activation** | When an alarm is activated (e.g., Charger Alarm is ON), the corresponding card visually changes (e.g., to a red/active state). | `6.png` |
-| **Deactivation Prompt** | A full-screen overlay that appears when an alarm is triggered, requiring the user to enter a specific code/pattern to silence the alarm. **(Crucial anti-theft step)**. | `7.png`, `8.png`, `9.png` |
-| **Settings/About Screen** | Accessible via the sliding menu, this section allows users to manage app settings, view an 'About' page, or get help. | `10.png` |
+| Feature/Screen | Description |
+| :--- | :---|
+| **Welcome/Onboarding** | A visually guided introduction for first-time users, explaining the app's purpose and key features.
+| **Home Screen** | The central hub where users can view and toggle the status of all alarms. Features a sliding menu for navigation.
+| **Charger Alarm** | Triggers a loud alarm when the device is disconnected from the charging cable.
+| **Motion Alarm** | Triggers a loud alarm when the device is moved from its resting position. 
+| **Pocket Alarm** | Triggers an alarm when the device is removed from a pocket or bag (likely using the proximity sensor).
+| **Alarm Activation** | When an alarm is activated (e.g., Charger Alarm is ON), the corresponding card visually changes (e.g., to a red/active state).
+| **Deactivation Prompt** | A full-screen overlay that appears when an alarm is triggered, requiring the user to enter a specific code/pattern to silence the alarm. **(Crucial anti-theft step)**. 
+| **Settings/About Screen** | Accessible via the sliding menu, this section allows users to manage app settings, view an 'About' page, or get help. 
+
+## 📱 Screenshots
+
+<img width="864" height="2016" alt="13" src="https://github.com/user-attachments/assets/76509f40-a829-4ce0-889a-4ef03c167338" />
+
 
 ## 🛠️ Tech Stack & Dependencies
 
