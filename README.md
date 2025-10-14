@@ -35,7 +35,6 @@ The app provides distinct security alarms and a guided user experience, as illus
 <img width="200" height="500" alt="10" src="https://github.com/user-attachments/assets/892b32c5-8560-46fb-8d95-c6c03811aaea" />
 <img width="200" height="500" alt="11" src="https://github.com/user-attachments/assets/08ba5b85-1ea0-428f-b8c5-62163906f7c0" />
 <img width="200" height="500" alt="12" src="https://github.com/user-attachments/assets/1ab0b3f4-1cf1-49e8-93ac-6ba810b59aa2" />
-<img width="200" height="500" alt="13" src="https://github.com/user-attachments/assets/adc804c2-1f98-406f-9431-81d20a57ad2e" />
 
 
 ## 🛠️ Tech Stack & Dependencies
@@ -60,7 +59,7 @@ The project is a standard Flutter application, relying on the following key pack
 
 1.  Clone the repository:
     ```bash
-    git clone [your_repo_url] keep-it-app-main
+    git clone https://github.com/GeorgeNabilBolas/keep-it-app keep-it-app-main
     cd keep-it-app-main
     ```
 2.  Install dependencies:
