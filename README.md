@@ -32,7 +32,7 @@ The app provides distinct security alarms and a guided user experience, as illus
 <img width="200" height="500" alt="7" src="https://github.com/user-attachments/assets/0aee97e4-edc1-4278-8ced-06b3ae538d62" />
 <img width="200" height="500" alt="8" src="https://github.com/user-attachments/assets/40f78851-258c-455b-9efd-69f7bb8e4d78" />
 <img width="200" height="500" alt="9" src="https://github.com/user-attachments/assets/4f5ccb02-5db9-43e3-a0c0-ca6cf7464131" />
-<img width="200" height="500" alt="10" src="https://github.com/user-attachments/assets/892b32c5-8560-46fb-8d95-c6c03811aaea" />
+<img width="200" height="500" alt="10" src="https://github.com/user-attachments/assets/d894bdb6-10ef-4485-b11d-cca018a4b0f5" />
 <img width="200" height="500" alt="11" src="https://github.com/user-attachments/assets/08ba5b85-1ea0-428f-b8c5-62163906f7c0" />
 <img width="200" height="500" alt="12" src="https://github.com/user-attachments/assets/1ab0b3f4-1cf1-49e8-93ac-6ba810b59aa2" />
 
